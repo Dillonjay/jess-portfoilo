@@ -46,7 +46,7 @@ export function ChallengeSection({ project }: ChallengeSectionProps) {
           <div className="space-y-4">
             <p className="text-lg font-light leading-relaxed text-snow-base/80">
               {showcase.description}{" "}
-              <span className="font-bold">{showcase.highlightedText}</span>.
+              <span className="font-bold">{showcase.highlightedText}</span>
             </p>
             <p className="text-lg font-light leading-relaxed text-snow-base/80">
               {showcase.conclusion}

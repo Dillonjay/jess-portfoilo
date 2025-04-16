@@ -29,17 +29,17 @@ export interface ShowcaseSection {
   description: string;
   highlightedText: string;
   conclusion: string;
-  demo?: {
+  demo: {
     gif: string;
     alt: string;
     caption: string;
   };
 }
 
-export interface ProjectSection {
+export interface ChallengeSection {
   title: string;
   description: string[];
-  showcase?: ShowcaseSection;
+  showcase: ShowcaseSection;
 }
 
 export interface DefineSection {
@@ -79,7 +79,7 @@ export interface Project {
   time: string;
   minutesToRead: number;
   sections: {
-    challenge: ProjectSection;
+    challenge: ChallengeSection;
     define: DefineSection;
   };
 }
@@ -132,7 +132,8 @@ export const PROJECTS = [
           "I was sold. The vision felt bold, the product had massive potential, and it aligned perfectly with trends shaping the future of health tech. Plus, there was a blank canvas waiting for design, and few things get me more excited than the chance to build something meaningful from the ground up.",
         ],
         showcase: {
-          description: "The team was deep into hardware development.",
+          description:
+            "The team was deep into hardware development. The just had some ",
           highlightedText:
             "some super basic screens to test if the device was working.",
           conclusion: "This is what they were working with.",

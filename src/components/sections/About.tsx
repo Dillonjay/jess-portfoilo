@@ -6,7 +6,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center  backdrop-blur-sm bg-[#1A1A1A]/1 text-snow-base py-20"
+      className="min-h-screen flex  backdrop-blur-sm bg-[#1A1A1A]/1 text-snow-base py-20"
     >
       <div>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-24">
