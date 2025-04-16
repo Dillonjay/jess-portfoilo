@@ -1,12 +1,9 @@
 "use client";
 
-import Image from "next/image";
-
 interface IconProps {
   className?: string;
 }
 
-// Method 1: SVG as a component (best for icons you want to style with CSS)
 export const Logo = ({ className = "h-8 w-8" }: IconProps) => (
   <svg
     width="72"
