@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 export default function About() {
@@ -13,20 +11,20 @@ export default function About() {
           <div className="md:col-span-8">
             <h2 className="text-5xl font-bold mb-20 uppercase">About Me</h2>
             <p className="text-2xl font-light text-snow-base/80 mb-6">
-              Hi, I’m Jess — Love to create intuitive, minimal experiences.“less
-              is more” and love designing clean, thoughtful interfaces that feel
-              effortless to use.
+              Hi, I&apos;m Jess — Love to create intuitive, minimal
+              experiences.&ldquo;less is more&rdquo; and love designing clean,
+              thoughtful interfaces that feel effortless to use.
             </p>
             <p className="text-2xl font-light text-snow-base/80 mb-6">
-              I’ve built 0→100 products in fast-paced startups, often as a solo
-              designer. I shape design systems, ship high-fidelity work, and
-              thrive in curious, collaborative teams.
+              I&apos;ve built 0→100 products in fast-paced startups, often as a
+              solo designer. I shape design systems, ship high-fidelity work,
+              and thrive in curious, collaborative teams.
             </p>
             <p className="text-2xl font-light text-snow-base/80">
-              Outside of work, you’ll usually find me exercising, doing yoga, or
-              curating oddly specific playlists Check them here. I&apos;m all
-              about building with intention and having fun while we&apos;re at
-              it.
+              Outside of work, you&apos;ll usually find me exercising, doing
+              yoga, or curating oddly specific playlists Check them here.
+              I&apos;m all about building with intention and having fun while
+              we&apos;re at it.
             </p>
           </div>
 

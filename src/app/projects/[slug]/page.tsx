@@ -5,10 +5,9 @@ import { ProjectFooter } from "@/components/projects/ProjectFooter";
 import { ChallengeSection } from "@/components/projects/ChallengeSection";
 import { DefineSection } from "@/components/projects/DefineSection";
 
-interface ProjectDetailsPageProps {
-  params: {
-    slug: string;
-  };
+// Define the params as expected by Next.js 15
+interface PageProps {
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -17,10 +16,10 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ProjectDetailsPage({
-  params,
-}: ProjectDetailsPageProps) {
-  const { slug } = await params;
+export default async function ProjectDetailsPage({ params }: PageProps) {
+  // Resolve the params promise
+  const resolvedParams = await params;
+  const { slug } = resolvedParams;
 
   const project = PROJECTS.find((p) => p.slug === slug);
 

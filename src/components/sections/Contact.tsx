@@ -1,5 +1,3 @@
-"use client";
-
 import { EmailIcon, LinkedInIcon } from "../common/Icons";
 
 const JESSE_EMAIL = "jess.romun@gmail.com";

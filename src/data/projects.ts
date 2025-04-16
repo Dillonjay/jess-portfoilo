@@ -84,7 +84,7 @@ export interface Project {
   };
 }
 
-export const PROJECTS = [
+export const PROJECTS: Project[] = [
   {
     slug: "pondo",
     company: "Pondo",
@@ -358,7 +358,7 @@ export const PROJECTS = [
       },
     },
   },
-] as const;
+];
 
 // Helper to get image paths for a project
 export const getProjectImages = (slug: ProjectSlug) => {

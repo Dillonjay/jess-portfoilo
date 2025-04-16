@@ -1,5 +1,3 @@
-"use client";
-
 import { PROJECTS } from "@/data/projects";
 import ProjectGrid from "../common/ProjectGrid";
 
