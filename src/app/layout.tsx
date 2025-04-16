@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Layout from "@/components/common/Layout";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -45,9 +44,7 @@ export default function RootLayout({
           href="/icon-512x512.png"
         />
       </head>
-      <body className="antialiased">
-        <Layout>{children}</Layout>
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

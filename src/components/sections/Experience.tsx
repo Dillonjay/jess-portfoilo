@@ -32,10 +32,7 @@ const EXPERIENCES: Experience[] = [
 
 export default function Experience() {
   return (
-    <section
-      id="experience"
-      className="min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20"
-    >
+    <section id="experience" className="min-h-screen py-20">
       <h2 className="text-5xl font-bold mb-20 uppercase">Experience</h2>
       <div className="divide-y divide-snow-base">
         {EXPERIENCES.map((exp) => (

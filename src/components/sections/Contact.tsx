@@ -9,9 +9,9 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center justify-center "
+      className="min-h-screen flex items-center justify-center  py-20"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="text-center">
         <h2 className="text-5xl md:text-6xl font-light">Got a project?</h2>
         <h2 className="text-5xl md:text-6xl font-light">
           Let&apos;s make it{" "}

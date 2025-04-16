@@ -4,13 +4,18 @@
 
 :root {
   --graphite-base: #121212;
-  --snow-base: #D8D8D8;
-  --snow-dark: #74747B;
+  --graphite-darker: #0b0b0b;
+  --snow-base: #d8d8d8;
+  --snow-dark: #74747b;
+  --nav-height: 4.5rem; /* 72px - matches py-4 + border + padding */
+  --content-top-spacing: calc(
+    var(--nav-height) + 3rem
+  ); /* Navigation height + 48px spacing */
 }
 
 body {
   @apply bg-graphite-base text-snow-base;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -20,6 +25,22 @@ body {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   user-select: none;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 
 @keyframes bounce-gentle {

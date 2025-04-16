@@ -13,6 +13,7 @@ export default {
       colors: {
         graphite: {
           base: "var(--graphite-base)",
+          darker: "var(--graphite-darker)",
         },
         snow: {
           base: "var(--snow-base)",

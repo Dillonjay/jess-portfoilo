@@ -8,7 +8,7 @@ export default function About() {
       id="about"
       className="min-h-screen flex items-center  backdrop-blur-sm bg-[#1A1A1A]/1 text-snow-base py-20"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-24">
           <div className="md:col-span-8">
             <h2 className="text-5xl font-bold mb-20 uppercase">About Me</h2>

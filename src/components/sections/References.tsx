@@ -39,7 +39,7 @@ export default function References() {
       id="references"
       className="min-h-screen  backdrop-blur-sm bg-[#1A1A1A]/1 text-snow-base py-20"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div>
         <h2 className="text-5xl font-bold mb-20 uppercase">References</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {TESTIMONIALS.map((testimonial) => (

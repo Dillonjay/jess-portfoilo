@@ -1,50 +1,13 @@
-import Image from 'next/image';
-import { notFound } from 'next/navigation';
+import { notFound } from "next/navigation";
+import { PROJECTS } from "@/data/projects";
+import { ProjectHero } from "@/components/projects/ProjectHero";
+import { ProjectFooter } from "@/components/projects/ProjectFooter";
 
-interface ProjectPageProps {
+interface ProjectDetailsPageProps {
   params: {
     slug: string;
   };
 }
-
-const PROJECTS = [
-  {
-    slug: "pondo",
-    title: "Pondo",
-    description: "Fintech platform revolutionizing personal finance",
-    image: "/images/project-pondo.png",
-    content: "<p>Detailed description of the Pondo project...</p>",
-    tags: ["Fintech", "UI/UX", "Mobile"],
-    tools: ["Figma", "React Native", "TypeScript"]
-  },
-  {
-    slug: "abea",
-    title: "Abea",
-    description: "Digital banking solution for modern businesses",
-    image: "/images/project-abea.png",
-    content: "<p>Detailed description of the Abea project...</p>",
-    tags: ["Banking", "Enterprise", "Web"],
-    tools: ["Figma", "React", "Node.js"]
-  },
-  {
-    slug: "albo",
-    title: "Albo",
-    description: "Mexico's leading neobank",
-    image: "/images/project-albo.png",
-    content: "<p>Detailed description of the Albo project...</p>",
-    tags: ["Fintech", "Mobile", "Banking"],
-    tools: ["Figma", "Swift", "Kotlin"]
-  },
-  {
-    slug: "freela",
-    title: "Freela",
-    description: "Freelancer management platform",
-    image: "/images/project-freela.png",
-    content: "<p>Detailed description of the Freela project...</p>",
-    tags: ["SaaS", "Productivity", "Web"],
-    tools: ["Figma", "React", "Python"]
-  }
-];
 
 export async function generateStaticParams() {
   return PROJECTS.map((project) => ({
@@ -52,58 +15,123 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
-  const project = PROJECTS.find((p) => p.slug === params.slug);
+export default async function ProjectDetailsPage({
+  params,
+}: ProjectDetailsPageProps) {
+  // Await the params object
+  const { slug } = await params;
+
+  const project = PROJECTS.find((p) => p.slug === slug);
 
   if (!project) {
     notFound();
   }
 
+  // Get other projects excluding the current one
+  const otherProjects = PROJECTS.filter((p) => p.slug !== slug).slice(0, 2);
+
   return (
-    <article className="min-h-screen bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <header className="mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">{project.title}</h1>
-          <div className="flex flex-wrap gap-2 mb-6">
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-800"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-          <p className="text-lg text-gray-600">{project.description}</p>
-        </header>
+    <main>
+      <ProjectHero project={project} />
 
-        <div className="relative aspect-w-16 aspect-h-9 mb-12">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover rounded-lg"
-          />
-        </div>
-
-        <div className="prose prose-lg max-w-none">
-          <div dangerouslySetInnerHTML={{ __html: project.content }} />
-        </div>
-
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Tools Used</h2>
-          <div className="flex flex-wrap gap-2">
-            {project.tools.map((tool) => (
-              <span
-                key={tool}
-                className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800"
-              >
-                {tool}
-              </span>
-            ))}
+      {/* The Challenge Section */}
+      <section className="containe6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8">The Challenge</h2>
+          <div className="grid grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-lg leading-relaxed mb-6">
+                Challenge breakdown text goes here...
+              </p>
+              <div className="aspect-[4/3] bg-graphite-base rounded-lg">
+                {/* Phone image will go here */}
+              </div>
+            </div>
+            <div>
+              <p className="text-lg leading-relaxed">
+                Additional paragraph about the challenge...
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </article>
+      </section>
+
+      {/* Define Section */}
+      <section className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-12">Define</h2>
+
+          {/* Brand Analysis */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-semibold mb-6">Brand Analysis</h3>
+            <div className="grid grid-cols-2 gap-12">
+              <div>
+                <p className="text-lg leading-relaxed mb-6">
+                  Brand analysis breakdown...
+                </p>
+              </div>
+              <div className="aspect-video bg-graphite-base rounded-lg">
+                {/* Brand analysis image */}
+              </div>
+            </div>
+          </div>
+
+          {/* Style Guide */}
+          <div>
+            <h3 className="text-2xl font-semibold mb-6">Style Guide</h3>
+            <div className="space-y-6">
+              <p className="text-lg leading-relaxed">
+                Style guide breakdown...
+              </p>
+              <div className="aspect-video bg-graphite-base rounded-lg">
+                {/* Style guide image */}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Structure Section */}
+      <section className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-12">Structure</h2>
+          {/* Structure sections will be added here */}
+        </div>
+      </section>
+
+      {/* Design Section */}
+      <section className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-12">Design</h2>
+          {/* Design sections will be added here */}
+
+          {/* Zigzag Section */}
+          <div className="space-y-16 mt-16">
+            <div className="grid grid-cols-2 gap-12 items-center">
+              <div className="aspect-video bg-graphite-base rounded-lg">
+                {/* First zigzag image */}
+              </div>
+              <div>
+                <p className="text-lg leading-relaxed">
+                  First zigzag text content...
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-lg leading-relaxed">
+                  Second zigzag text content...
+                </p>
+              </div>
+              <div className="aspect-video bg-graphite-base rounded-lg">
+                {/* Second zigzag image */}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <ProjectFooter otherProjects={otherProjects} />
+    </main>
   );
-} 
+}
