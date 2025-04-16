@@ -19,7 +19,7 @@ const NAV_LINKS: NavLink[] = [
 export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-graphite-base">
-      <div className="mx-8 border-b border-snow-base/20">
+      <div className="mx-8 border-b border-snow-base">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center py-4">
             <ScrollLink
@@ -33,7 +33,7 @@ export default function Navigation() {
               <Logo className="h-10 w-10" />
             </ScrollLink>
 
-            <div className="hidden md:flex space-x-12">
+            <div className="hidden md:flex space-x-16">
               {NAV_LINKS.map((link) => (
                 <ScrollLink
                   key={link.to}
@@ -42,7 +42,7 @@ export default function Navigation() {
                   smooth={true}
                   offset={0}
                   duration={500}
-                  className="text-snow-base hover:text-snow-dark transition-colors cursor-pointer text-lg"
+                  className="text-snow-base hover:text-snow-dark transition-colors cursor-pointer text-xl font-bold"
                 >
                   {link.label}
                 </ScrollLink>
