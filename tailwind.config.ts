@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import aspectRatio from "@tailwindcss/aspect-ratio";
+import typography from "@tailwindcss/typography";
 
 export default {
   content: [
@@ -9,10 +11,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        graphite: {
+          base: "var(--graphite-base)",
+        },
+        snow: {
+          base: "var(--snow-base)",
+          dark: "var(--snow-dark)",
+        },
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
   },
-  plugins: [],
+  plugins: [aspectRatio, typography],
 } satisfies Config;
